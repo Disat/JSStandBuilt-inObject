@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      margin: 50px 0;
+      border-bottom: 1px solid #d8d8d8;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Stand built-in objects</h1>
+    <p>standard built-in objects,Here, "global objects" refer to objects in the global scope,including their methods and
+      properties.</p>
+  </header>
+  <main>
+
+    <section>
+      <h2>Value properties</h2>
+      <p>These global properties return a simple value. They have no properties or methods.</p>
+      <div>
+        <h3>Infinity</h3>
+        <ul>
+          <li>The initial value of Infinity is Number.POSITIVE_INFINITY</li>
+          <li>value is Math.pow(2,53)-1</li>
+        </ul>
+      </div>
+      <div>
+        <h3>NaN</h3>
+        <ul>
+          <li>The initial value of NaN is Not-A-Number — the same as the value of Number.NaN.</li>
+          <li>There five different types of oprations that return NaN</li>
+          <li>difference between isNaN() and Number.isNaN(): the former will return true if the value is currently NaN,
+            or if it is going to be NaN after it is coerced to a number, </li>
+          <li>some array methods cannot find NaN, while others can.</li>
+
+        </ul>
+      </div>
+      <div>
+        <h3>undefined</h3>
+        <ul>
+          <li> It is one of JavaScript's primitive types.</li>
+          <li>The initial value of undefined is the primitive value undefined.</li>
+          <li>There three ways that return undefined.variable has not been assigned or funcution was not returned and
+            typeof notdefinedvariable</li>
+
+        </ul>
+        <ul>
+          常见的校验
+          <li>变量是否存在 (typeof variable) ==="undefined"</li>
+          <li>变量是否初始化 variable === undefined</li>
+          <li>方法（函数）是否存在，可以安全调用</li>
+        </ul>
+      </div>
+      <div>
+        <h3>globalThis</h3>
+        <p>Historically, accessing the global object has required different syntax in different JavaScript environments.
+        </p>
+
+      </div>
+    </section>
+    <section>
+      <h2>Funciton properties</h2>
+      <p>These global functions—functions which are called globally, rather than on an object—directly return their
+        results to the caller.</p>
+
+      <div>
+        <h3>eval()</h3>
+        <p>Executing JavaScript from a string is an enormous security risk</p>
+      </div>
+      <div>
+        <h3>isFinite()</h3>
+        <p>false if the argument is (or will be coerced to) positive or negative Infinity or NaN or undefined; otherwise, true.</p>
+        <p>常用来检查除0</p>
+      </div>
+      <div>
+        <h3>isNaN()</h3>
+        <p>The isNaN() function determines whether a value is NaN or not.it has a little differences with Number.isNaN(),</p>
+      </div>
+      <div>
+        <h3>parseFloat()</h3>
+        <p>The parseFloat() function parses an argument (converting it to a string first if needed) and returns a floating point number.</p>
+        <p>不仅仅只能parse字符串，parseFloat will parse non-string objects if they have a toString or valueOf method. The returned value is the same as if parseFloat had been called on the result of those methods.</p>
+        <p>未解疑问：能否格式化输出，（即控制小数位数）</p>
+      </div>
+      <div>
+        <h3>parseInt()</h3>
+        <p>The parseInt() function parses a string argument and returns an integer of the specified radix 。注意radix是代解析字符串的radix</p>
+      </div>
+      <div>
+        <h3>encodeURI()</h3>
+        <h3>encodeURIComponent()</h3>
+        <h3>decodeURI()</h3>
+        <h3>decodeURIComponent()</h3>
+        <p>encodeURI安全字符多适用于整个URI编码</p>
+        <p>encodeURIComponent安全字符少，使用与部分路径编码和使用AJAX异步请求的URI编码</p>
+      </div>
+    </section>
+    <section>
+      <h3></h3>
+    </section>
+
+  </main>
+  <div>
+    <h2>补充</h2>
+    <div>
+      <h3>null</h3>
+      <p>null is not an identifier for a property of the global object, like undefined can be</p>
+      <p>if variable value is null,it represents the value is known to exist now but it has no type or value</p>
+      <p>is an assignment value. It can be assigned to a variable as a representation of no value:</p>
+      <p>在JavaScript中，null是字面量同时也是语言中的关键字，用来表示无法识别的对象值。换句话说，这用来表示“无值（no value）”。虽然相似，undefined实际上代表了不存在的值（non-existence of a value）。</p>
+      <p>null表示"没有对象"，即该处不应该有值。起到占位符的作用</p>
+      <p>undefined表示"缺少值"，就是此处应该有一个值，但是还没有定义</p>
+      <p>typeof的这种行为已经被确认为一个错误，虽然提出了修正，出于后兼容的目的，这一点已经保持不变。 这就是为什么JavaScript环境从来没有设置一个值为null</p>
+    </div>
+  </div>
+
+  <script>
+    globalThis.parseFloat()
+  </script>
+</body>
+
+</html>
