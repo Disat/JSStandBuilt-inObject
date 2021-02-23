@@ -104,11 +104,62 @@
       </div>
     </section>
     <section>
-      <h3></h3>
+      <h2>Fundamental objects</h2>
+      <p>These are the fundamental, basic objects upon which all other objects are based. </p>
+      <div>
+        <h3>Object</h3>
+        <p>待整理，，，</p>
+      </div>
+    </section>
+    <section>
+      <h2>Text processing</h2>
+      <p>These objects represent strings and support manipulating them.</p>
+      <div>
+        <h3>String</h3>
+        <p>The String object is used to represent and manipulate a sequence of characters.</p>
+        <p>Strings are useful for holding data that can be represented in text form.</p>
+        <p>There are two ways of creating String:from string literals or using the String() constructor.little different in using with eval()</p>
+        <p>Using he less-than and greater-than operators  compares strings. If you wish to compare without regard to upper or lower case characters, use a function similar to this:</p>
+        <p>长literial string 折行 有3种方式</p>
+        <ul>
+          <h4>String的常用静态方法</h4>
+          <li>String.fromCharCode(num1 [, ...[, numN]])</li>
+          <li>String.raw()：生成无转义字符串</li>
+          <h4>实例属性</h4>
+          <li>length</li>
+          <h4>实例的常用方法（一下均省略String.prototype.）</h4>
+          <li>String.prototype.charAt(index)</li>
+          <li>concat()</li>
+          <li>includes()</li>
+          <li>endWith():Determines whether a string ends with the characters of the string searchString.</li>
+          <li>indexOf()</li>
+          <li>lastIndexOf</li>
+          <li>match()</li>
+          <li>matchAll()</li>
+          <li>normalize()</li>
+          <li>padEnd()</li>
+          <li>padStart()</li>
+          <li>repeat()</li>
+          <li>replace()</li>
+          <li>replaceAll()</li>
+          <li>search()</li>
+          <li>slice()</li>
+          <li>split():常用于字符串向数组格式化转换,也可以实现查找替换。支持正则表达式字符串参数</li>
+          <li>startWith():第二个可选参数可以指定起始位置</li>
+          <li>substr()：起始位置可以为复数，第二个参数不是结束位置而是长度</li>
+          <li>toLowerCase()</li>
+          <li>toString():For String objects,the toString() method returns a string representation of the object and is the same as the String.prototype.valueOf() method.并且，Overrides the Object.prototype.toString() method./li>
+          <li>toUpperCase()</li>
+          <li>trim()</li>
+          <li>trimStart()</li>
+          <li>trimEnd()</li>
+          <li>valueOf():Overrides the Object.prototype.valueOf() method. String实例的valueOf()返回字符串本身</li>
+        </ul>
+      </div>
     </section>
 
   </main>
-  <div>
+  <section>
     <h2>补充</h2>
     <div>
       <h3>null</h3>
@@ -120,10 +171,32 @@
       <p>undefined表示"缺少值"，就是此处应该有一个值，但是还没有定义</p>
       <p>typeof的这种行为已经被确认为一个错误，虽然提出了修正，出于后兼容的目的，这一点已经保持不变。 这就是为什么JavaScript环境从来没有设置一个值为null</p>
     </div>
-  </div>
-
+    <div>
+      <h3>注意原始Object原型上的方法，在各个不同类型对象上的重写情况</h3>
+      <ul>
+        <li>hasOwnProperty</li>
+        <li>isPropertyOf</li>
+        <li>propertyIsEnumerable</li>
+        <li>toLocaleString</li>
+        <li>toString()</li>
+        <li>valueOf()</li>
+      </ul>
+    </div>
+    <div>
+      <h3>基本数据类型，Number,Boolen,String的自动装箱和自动拆箱</h3>
+      <p>将值或者变量进行自动装箱和拆箱</p>
+      <a href="https://github.com/ifeees/articles/issues/15">click for more informations</a>
+    </div>
+  </section>
+  <section>
+    <h2>最佳实践</h2>
+    <div>
+      <h3>String conversion</h3>
+      <p>在进行字符串转换时，使用String()</p>
+    </div>
+  </section>
   <script>
-    globalThis.parseFloat()
+
   </script>
 </body>
 
