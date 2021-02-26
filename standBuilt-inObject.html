@@ -110,6 +110,88 @@
         <h3>Object</h3>
         <p>待整理，，，</p>
       </div>
+      <div>
+        <h3>Function</h3>
+        <p>Every JavaScript function is actually a Function object(目前在chrome Dev Tools无法直接查看各个函数对象的原型继承情况，但是可以使用.号方法调用运算符调用)</p>
+        <p>This can be seen with the code (function(){}).constructor === Function, which returns true.验证函数对象原型是Function</p>
+        <div>
+          <h4>Constructor</h4>
+          <ul>
+            <li>Creates a new Function object. Calling the constructor directly can create functions dynamically.It's difference from eval().However, unlike eval, the Function constructor creates functions that execute in the global scope only</li>
+          </ul>
+          <h4>Instance properties</h4>
+          <ul>
+            <li>Funciton.prototype.length</li>
+            <li>Function.prototype.name</li>
+          </ul>
+          <h4>Instance methods</h4>
+          <ul>
+            <li>Function.prototype.apply(thisArg [, array-like object]) return the result of calling the function with the specified this value and arguments.</li>
+            <li>Function.prototype.bind(thisArg[, arg1[, arg2[, ...argN]]])</li>
+            <li>func.call([thisArg[, arg1, arg2, ...argN]])</li>
+            <li>Function.prototype.toString():Overrides the Object.prototype.toString method. Return a string representing the source code of the function.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Boolen</h3>
+          <div>
+            <h4>Instance method</h4>
+            <p>Boolen.prototype.toString()</p>
+            <p>Boolen.prototype.valueOf()</p>
+          </div>
+        </div>
+        <div>
+          <h3>Symbol</h3>
+          <div>To be revised,,,</div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>Numbers and dates</h2>
+      <div>
+        <h3>Number</h3>
+        <p>A number literal like 37 in javascript</p>
+      </div>
+      <div>
+        <h3>BigInt</h3>
+      </div>
+      <div>
+        <h3>Math</h3>
+        <p>Math works with the Number type. It doesn't work with BigInt.</p>
+        <p>Unlike many other global objects, Math is not a constructor. All properties and methods of Math are static.</p>
+
+        <div>
+          <h4>Static methods in Common use</h4>
+          <ul>
+            <li>Math.abs()</li>
+            <li>Math.ceil()</li>
+            <li>Math.floor()</li>
+            <li>Math.max()</li>
+            <li>Math.min()</li>
+            <li>Math.pow()</li>
+            <li>Math.random()</li>
+            <li>Math.round()</li>
+            <li>Math.sign()</li>
+            <li>Math.sqrt()</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <h3>Date</h3>
+        <div>
+          <h4>Constructor</h4>
+          <ul>
+            <li>Date(),return a string representing of the current date and time</li>
+            <li>new Date(),return a new Date object</li>
+          </ul>
+          <h4>Static methods</h4>
+          <ul>
+            <li>Date.now()</li>
+            <li>Date.parse(dateString),dateString representing a simplification of the ISO 8601 calendar date extend format,return The parse() method takes a date string (such as "2011-10-10T14:48:00") and returns the number of milliseconds since January 1, 1970, 00:00:00 UTC.</li>
+            <li>Date.UTC(year, month[, day[, hour[, minute[, second[, millisecond]]]]])</li>
+          </ul>
+        </div>
+      </div>
     </section>
     <section>
       <h2>Text processing</h2>
@@ -156,6 +238,96 @@
           <li>valueOf():Overrides the Object.prototype.valueOf() method. String实例的valueOf()返回字符串本身</li>
         </ul>
       </div>
+      <div>
+        <h3>RegExp</h3>
+
+      </div>
+    </section>
+    <section>
+      <h2>Indexed collections</h2>
+      <div>
+        <h3>Array</h3>
+        <p>Array's prototype is Object</p>
+        <p>These objects represent collections of data which are ordered by an index value. This includes (typed) arrays and array-like constructs.</p>
+        <p>The JavaScript Array are high level list-like objects</p>
+        <p>Neither the length of a JavaScript array nor the types of its elements are fixed.</p>
+        <p> but if these features are not desirable for your particular use, you might consider using typed arrays.</p>
+        <ul>
+          <h4>Static methods</h4>
+          <li>Array.from()</li>
+          <p>from(arrayLike[interable object] [, mapFn [, thisArg]]) return A new Array instance. 功能强大</p>
+          <ul>
+            <li>array-like object: objects with a length property and indexed elements</li>
+            <li>iterable object: objects such as Map and Set</li>
+          </ul>
+          <li>Array.isArray()</li>
+          <li>Array.of()</li>
+        </ul>
+        <ul>
+          <h4>Instance properties</h4>
+          <li>Array.prototype.length</li>
+        </ul>
+        <ul>
+          <h4>Instance methonds</h4>
+          <li>Array.prototype.concat()(Array.prototype. are omitted below)</li>
+          <li>copyWithin()</li>
+          <li>entries()</li>
+          <li>every(callback(element[, index[, array]])[, thisArg]) return true if the callback function returns a truthy value for every array element. Otherwise, false.</li>
+          <li>fill(value[, start[, end]]) return the modified array, filled with value.</li>
+          <li>filter(callback(currentValue[, index[, array]]) {}[, thisArg]);A new array with the elements that pass the test. If no elements pass the test, an empty array will be returned.</li>
+          <li>find(callback(element[, index[, array]])[, thisArg]) The value of the first element in the array that satisfies the provided testing function. Otherwise, undefined is returned.</li>
+          <li>forEach(callback(currentValue[, index[, array]]) {}[, thisArg]);return undefined.</li>
+          <li>includes(valueToFind[, fromIndex]) return It's a generic method </li>
+          <li>indexOf()</li>
+          <li>join([separator]),return a string with all elements are joined,if length is 0, the empty string is return</li>
+          <li>keys(),A new Array iterator object.</li>
+          <li>lastIndexOf(searchElement[, fromIndex]),return the last index of the element in the array; -1 if not found.</li>
+          <li>map(calback(currentValue[,index[,array]]){}[thisArg]),return a new array with each element being the resule of the callback function</li>
+          <li>pop(),Have no parameters,return the removed element from the array</li>
+          <li>push([element1[, ...[, elementN]]]),return the new length property of the object upon which the method was called </li>
+          <li>reduce(callback(accumulator,currentValue[,index[,array]])[,initialValue]),return the single value from the reduction( The value of the last callback function return )</li>
+          <li>reduceRight(function(accumulator, currentValue, index, array) {}),The value that results from the reduction.</li>
+          <li>reverse(),has no parameters,return the revered array(changed the origin array ,You can use slice() to make a copy then reverse() it ,like array.slice().reverse() ).</li>
+          <li>shift(),has no parameters,return the first element(changed the origin array).</li>
+          <li>slice([start[,end]]),return a new array containning the extracted elements</li>
+          <li>some(callback(element[, index[, array]])[, thisArg]),return true if the callback function returns a truthy value for at least one element in the array </li>
+          <li>sort([compareFuncton]),return the sorted array, Note that the array is sorted in place(no copy is made)</li>
+          <li>splice(start[,deletedCount[,item1[,2item[...]]]]),this is in-place algorithm,return An array containing the deleted elements </li>
+          <li>toString(),return a string representing the elements of the array</li>
+          <li>unshift(element1[, ...[, elementN]]),in-place algorithm return the new length property of the object upon which the method was called.</li>
+          <li>values(),return a new Array iterator object.</li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <h2>Keyed collections</h2>
+      <p>These objects represent collections with using keys</p>
+      <div>
+        <h3>Map</h3>
+        <p>Any value(both objects and primitive values) may be used as a key or a value</p>
+        <div>
+          <h4>Constructor</h4>
+          <p>Map([iterable]),iterable is a array or other iterable object whose value is key-values pairs</p>
+          <h4>Instance properties</h4>
+          <p>Map.propertye.size,return the number of key/values pairs in the map object</p>
+          <h4>Instance methods</h4>
+          <ul>
+            <li>Map.prototype.clear(),Map.prototype are omitted below</li>
+            <li>delete(key),The key of the element to remove from the Map object.</li>
+            <li>get(key), return value or undifined</li>
+            <li>has(key,return a boolen </li>
+            <li>set(key,value),return the map object</li>
+          </ul>
+          <h4>Iteration methods</h4>
+          <p>return a new iterator object</p>
+          <ul>
+            <li>Map.prototype.keys(),return a new iterator object that contains the values for each element in the Map object in insertion order</li>
+            <li>values()</li>
+            <li>entries()</li>
+            <li>forEach(callback([value][,key][,map])[,thisArg]),return undefined</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
   </main>
@@ -192,7 +364,7 @@
     <h2>最佳实践</h2>
     <div>
       <h3>String conversion</h3>
-      <p>在进行字符串转换时，使用String()</p>
+      <p>在进行字符串转换时，使用String()，避免null.undefined.异常</p>
     </div>
   </section>
   <script>
